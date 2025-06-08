@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cl.dao.MinsuyudingDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.cl.entity.MinsuyudingEntity" id="minsuyudingMap">
+        <result property="fangjianmingcheng" column="fangjianmingcheng"/>
+        <result property="fangjianleixing" column="fangjianleixing"/>
+        <result property="yiwanjiage" column="yiwanjiage"/>
+        <result property="minsumingcheng" column="minsumingcheng"/>
+        <result property="minsudizhi" column="minsudizhi"/>
+        <result property="minsuleixing" column="minsuleixing"/>
+        <result property="ruzhuriqi" column="ruzhuriqi"/>
+        <result property="ruzhutianshu" column="ruzhutianshu"/>
+        <result property="ruzhujine" column="ruzhujine"/>
+        <result property="yudingshijian" column="yudingshijian"/>
+        <result property="yonghuzhanghao" column="yonghuzhanghao"/>
+        <result property="yonghuxingming" column="yonghuxingming"/>
+        <result property="shoujihaoma" column="shoujihaoma"/>
+        <result property="sfsh" column="sfsh"/>
+        <result property="shhf" column="shhf"/>
+        <result property="ispay" column="ispay"/>
+    </resultMap>
+
+    <select id="selectListView"
+		resultType="com.cl.entity.view.MinsuyudingView" >
+
+		SELECT  minsuyuding.* FROM minsuyuding  minsuyuding 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.cl.entity.view.MinsuyudingView" >
+		SELECT * FROM minsuyuding  minsuyuding <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
