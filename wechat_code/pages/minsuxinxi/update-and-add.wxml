@@ -1,0 +1,111 @@
+
+<view class="update-container">
+ <view class="content">
+     <view class="form-box">
+    <view class="item-box">
+        <view class="item-label">房间名称</view>
+        <input  class="item-input"
+
+
+
+
+
+
+                type="text"  disabled="{{ro.fangjianmingcheng==true}}"  placeholder="房间名称" model:value="{{fangjianmingcheng}}" />
+    </view>
+
+<view class="item-box"    bindtap="uploadfangjiantupian">
+    <view   class="item-label">房间图片</view>
+    <image  src="{{fangjiantupianPath}}" mode="aspectFill"  class="item-img"></image>
+</view>
+<view class="item-box">
+    <view class="item-label" >房间类型</view>
+    <picker   class="down-item-picker"     bindchange="fangjianleixingChange" value="{{fangjianleixingIndex}}"  range="{{fangjianleixingList}}">
+                <view class="down-item-picker-text">
+                    {{fangjianleixingIndex||fangjianleixingIndex==0?fangjianleixingList[fangjianleixingIndex]:"请选择房间类型"}}
+                </view>
+    </picker>
+</view>
+    <view class="item-box">
+        <view class="item-label">一晚价格</view>
+        <input  class="item-input"
+
+
+
+
+
+
+                type="text"  disabled="{{ro.yiwanjiage==true}}"  placeholder="一晚价格" model:value="{{yiwanjiage}}" />
+    </view>
+
+    <view class="item-box">
+        <view class="item-label">服务电话</view>
+        <input  class="item-input"
+
+
+
+
+
+
+                type="text"  disabled="{{ro.fuwudianhua==true}}"  placeholder="服务电话" model:value="{{fuwudianhua}}" />
+    </view>
+
+    <com-edit></com-edit>
+    <view class="item-box">
+        <view class="item-label">收藏数量</view>
+        <input  class="item-input"
+
+
+
+
+
+
+                type="text"  disabled="{{ro.storeupnum==true}}"  placeholder="收藏数量" model:value="{{storeupnum}}" />
+    </view>
+
+    <view class="item-box">
+        <view class="item-label">民宿名称</view>
+        <input  class="item-input"
+
+
+
+
+
+
+                type="text"  disabled="{{ro.minsumingcheng==true}}"  placeholder="民宿名称" model:value="{{minsumingcheng}}" />
+    </view>
+
+    <view class="item-box">
+        <view class="item-label">民宿地址</view>
+        <input  class="item-input"
+
+
+
+
+
+
+                type="text"  disabled="{{ro.minsudizhi==true}}"  placeholder="民宿地址" model:value="{{minsudizhi}}" />
+    </view>
+
+<view class="item-box">
+    <view class="item-label" >民宿类型</view>
+    <picker   class="down-item-picker"     bindchange="minsuleixingChange" value="{{minsuleixingIndex}}"  range="{{minsuleixingList}}">
+                <view class="down-item-picker-text">
+                    {{minsuleixingIndex||minsuleixingIndex==0?minsuleixingList[minsuleixingIndex]:"请选择民宿类型"}}
+                </view>
+    </picker>
+</view>
+     </view>
+
+
+     <view class="btn-box">
+
+
+
+  <button     class="submit-btn" bindtap="submit">提交</button>
+     </view>
+
+
+    </view>
+
+</view>

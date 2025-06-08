@@ -1,0 +1,30 @@
+
+<view class="update-container">
+ <view class="content">
+     <view class="form-box">
+    <view class="item-box">
+        <view class="item-label">民宿类型</view>
+        <input  class="item-input"
+
+
+
+
+
+
+                type="text"  disabled="{{ro.minsuleixing==true}}"  placeholder="民宿类型" model:value="{{minsuleixing}}" />
+    </view>
+
+     </view>
+
+
+     <view class="btn-box">
+
+
+
+  <button     class="submit-btn" bindtap="submit">提交</button>
+     </view>
+
+
+    </view>
+
+</view>

@@ -1,0 +1,138 @@
+<view class="detail-container">
+<view class="content"   bind:tap="authTap">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<view class="detail-box">
+
+
+<view class="detail-item-box" >
+<view class="detail-item-label">房间名称：</view>
+<view class="detail-item-text">{{detailList.fangjianmingcheng}}</view>
+</view>
+<view class="detail-item-box" >
+<view class="detail-item-label">房间类型：</view>
+<view class="detail-item-text">{{detailList.fangjianleixing}}</view>
+</view>
+
+
+<view class="detail-item-box" >
+<view class="detail-item-label">一晚价格：</view>
+<view class="detail-item-text">{{detailList.yiwanjiage}}</view>
+</view>
+<view class="detail-item-box" >
+<view class="detail-item-label">民宿名称：</view>
+<view class="detail-item-text">{{detailList.minsumingcheng}}</view>
+</view>
+<view class="detail-item-box" >
+<view class="detail-item-label">民宿地址：</view>
+<view class="detail-item-text">{{detailList.minsudizhi}}</view>
+</view>
+
+
+<view class="detail-item-box" >
+<view class="detail-item-label">民宿类型：</view>
+<view class="detail-item-text">{{detailList.minsuleixing}}</view>
+</view>
+
+
+<view class="detail-item-box" >
+<view class="detail-item-label">入住日期：</view>
+<view class="detail-item-text">{{detailList.ruzhuriqi}}</view>
+</view>
+
+
+<view class="detail-item-box" >
+<view class="detail-item-label">入住天数：</view>
+<view class="detail-item-text">{{detailList.ruzhutianshu}}</view>
+</view>
+
+
+<view class="detail-item-box" >
+<view class="detail-item-label">入住金额：</view>
+<view class="detail-item-text">{{detailList.ruzhujine}}</view>
+</view>
+
+
+<view class="detail-item-box" >
+<view class="detail-item-label">预订时间：</view>
+<view class="detail-item-text">{{detailList.addtime}}</view>
+</view>
+<view class="detail-item-box" >
+<view class="detail-item-label">用户账号：</view>
+<view class="detail-item-text">{{detailList.yonghuzhanghao}}</view>
+</view>
+
+
+<view class="detail-item-box" >
+<view class="detail-item-label">用户姓名：</view>
+<view class="detail-item-text">{{detailList.yonghuxingming}}</view>
+</view>
+
+
+<view class="detail-item-box" >
+<view class="detail-item-label">手机号码：</view>
+<view class="detail-item-text">{{detailList.shoujihaoma}}</view>
+</view>
+
+
+
+
+
+
+<view  class="detail-item-box">
+<view class="detail-item-label">审核状态：</view>
+<view wx:if="{{detailList.sfsh=='是'}}" class="text" class="detail-item-text">通过</view>
+<view wx:if="{{detailList.sfsh=='否'}}" class="text" class="detail-item-text">不通过</view>
+<view wx:if="{{detailList.sfsh=='待审核'}}" class="text" class="detail-item-text">待审核</view>
+</view>
+<view class="detail-item-box">
+<view class="detail-item-label">回复内容</view>
+<view class="detail-item-text">{{detailList.shhf}}</view>
+</view>
+
+
+
+
+
+
+
+
+
+</view>
+
+
+
+
+
+
+
+
+<view class="operate-box">
+<button class="pay" bind:tap="onPayTap" wx:if="{{detailList.ispay=='支付'}}">支付</button>
+<button class="pay" bind:tap="onPayTap" wx:if="{{detailList.ispay=='未支付'}}">未支付</button>
+<button class="pay"  wx:if="{{detailList.ispay=='已支付'}}">已支付</button>
+
+
+
+
+
+
+
+</view>
+
+</view>
+</view>

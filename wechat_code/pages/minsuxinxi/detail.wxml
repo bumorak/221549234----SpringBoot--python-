@@ -1,0 +1,138 @@
+<view class="detail-container">
+<view class="content"   bind:tap="authTap">
+
+
+<swiper indicator-dots="{{true}}" autoplay="{{true}}" interval="{{5000}}" class="swiper" vertical="{{false}}" interval="{{5000}}" duration="{{500}}"  indicator-color='#6484ff30'   indicator-active-color="#ffffff"   autoplay="{{true}}"  circular="{{true}}">
+<swiper-item class="swiper-item"  wx:for="{{picture}}"   wx:key="{{index}}">
+    <image src="{{baseURL+item}}" mode="aspectFit"   class="swiper-img"></image>
+    <view   wx:if="$conf.menu.flag"  class="swiper-title">{{item.title}}</view>
+</swiper-item>
+</swiper>
+
+
+
+
+
+
+
+
+<view class="detail-box">
+
+<view class="price-box">
+<view  wx:if="{{islike}}" class="iconfont icon-likefill2  storeUp"  bind:tap="cancelLikeTap"></view>
+<view wx:else="" class="iconfont   icon-likeline2 cancel-storeUp"   bind:tap="likeTap"></view>
+</view>
+
+<view class="detail-item-box" >
+<view class="detail-item-label">房间名称：</view>
+<view class="detail-item-text">{{detailList.fangjianmingcheng}}</view>
+</view>
+<view class="detail-detail-img-box">
+<view class="detail-item-label">房间图片：</view>
+<image class="detail-detail-img-img" wx:if="{{detailList.fangjiantupian}}"  src="{{baseURL+picture[0]}}"></image>
+</view>
+<view class="detail-item-box" >
+<view class="detail-item-label">房间类型：</view>
+<view class="detail-item-text">{{detailList.fangjianleixing}}</view>
+</view>
+
+
+<view class="detail-item-box" >
+<view class="detail-item-label">一晚价格：</view>
+<view class="detail-item-text">{{detailList.yiwanjiage}}</view>
+</view>
+<view class="detail-item-box" >
+<view class="detail-item-label">服务电话：</view>
+<view class="detail-item-text">{{detailList.fuwudianhua}}</view>
+</view>
+
+
+<view class="detail-item-box" >
+<view class="detail-item-label">收藏数量：</view>
+<view class="detail-item-text">{{detailList.storeupnum}}</view>
+</view>
+
+
+<view class="detail-item-box" >
+<view class="detail-item-label">民宿名称：</view>
+<view class="detail-item-text">{{detailList.minsumingcheng}}</view>
+</view>
+<view class="detail-item-box" >
+<view class="detail-item-label">民宿地址：</view>
+<view class="detail-item-text">{{detailList.minsudizhi}}</view>
+</view>
+
+
+<view class="detail-item-box" >
+<view class="detail-item-label">民宿类型：</view>
+<view class="detail-item-text">{{detailList.minsuleixing}}</view>
+</view>
+
+
+
+
+
+
+
+
+
+<view class="textarea-box">
+<view class="textarea-label">房内设施</view>
+<view class="textarea-text">
+    <rich-text nodes="{{detailList.fangneisheshi}}"></rich-text>
+</view>
+</view>
+
+
+<view class="commment-box">
+<view class="commment-header">
+<view class="commment-title">评论</view>
+<view class="comment-add-box" bind:tap="addCommentap">
+            <view class="comment-add-icon" class="iconfont icon-xinzeng1"></view>
+    <view class="comment-add-text">添加评论</view>
+</view>
+</view>
+<view class="commment-item" wx:for="{{commmentList}}" wx:key="index">
+<view class="comment-item-user">
+    <image class="item-avatar" src="{{baseURL+item.avatarurl}}" mode="aspectFit" />
+    <view class="item-nickname">{{item.nickname}}</view>
+</view>
+<view :style='{"margin":"8rpx 0 8rpx 0","lineHeight":"48rpx","fontSize":"28rpx","color":"#666666","textIndent":"2em"}' class="text-gray text-content text-df">
+    </view>
+<view class="commment-item-box">
+    <rich-text nodes="{{item.content}}" />
+</view>
+<view class="commment-time">{{item.addtime}}</view>
+</view>
+</view>
+
+
+
+
+</view>
+
+
+
+
+
+
+
+
+<view class="operate-box">
+<button  class="common-btn"  wx:if="{{minsuyudingShow}}"
+     data-info="minsuyuding,'','',''" bind:tap="onAcrossTap" >
+预订
+</button>
+    <button  class="common-btn"  wx:if="{{!minsuyudingShow}}"
+             data-info="minsuyuding,'','',''" bind:tap="onAcrossTap" >
+        预订
+    </button>
+
+
+
+
+
+</view>
+
+</view>
+</view>
